@@ -24,6 +24,9 @@ A static site for The Hospitality Doctor (SRK Hospitality Solutions), plus one V
 
 Until the email variables are set, the form returns a friendly error that points visitors to WhatsApp and email.
 
+## Updating CSS, JS or icons
+After editing `assets/css/styles.css`, `assets/js/main.js` or the icons, run `python3 scripts/version-assets.py` before committing. It stamps a content hash onto each file's URL so visitors' browsers fetch the new version instead of a cached copy.
+
 ## Spam protection
 The booking form uses a hidden honeypot field, a minimum fill time of 3 seconds, a same-origin check, best-effort rate limiting per IP (5 per 10 minutes) and server-side validation. For stronger protection, add Cloudflare Turnstile or Vercel Firewall rate limiting.
 

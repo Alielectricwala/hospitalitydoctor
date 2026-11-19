@@ -1,21 +1,31 @@
-# The Hospitality Doctor — landing page
+# The Hospitality Doctor: website
 
-A static one-page site for The Hospitality Doctor (SRK Hospitality Solutions). It has no build step and no dependencies.
+A static site for The Hospitality Doctor (SRK Hospitality Solutions), plus one Vercel serverless function for the booking form. There's no build step.
+
+## Structure
+- `index.html`: landing page (SEO, GEO and JSON-LD)
+- `privacy.html`, `terms.html`, `404.html`: legal and error pages
+- `assets/css/styles.css`: brand design tokens and components following Apple's HIG
+- `assets/js/main.js`: interactions, form validation, consent-gated analytics
+- `api/contact.js`: booking form endpoint (validation, spam protection, email via Resend)
+- `vercel.json`: redirects, security headers (CSP, HSTS), caching
+- `sitemap.xml`, `robots.txt`, `llms.txt`, `site.webmanifest`
 
 ## Deploy on Vercel
-1. Import this repo in Vercel. Framework preset: **Other**. Leave the build command empty. Output directory: `/` (root).
-2. Add the custom domain. The site assumes **https://www.srkhospitality.net**. If you use a different domain, find-and-replace `https://www.srkhospitality.net` in `index.html`, `sitemap.xml`, `robots.txt` and `llms.txt`.
-3. After the site is live, submit `/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
+1. Import the repo. Framework preset: **Other**. Leave the build command empty. Output directory: root.
+2. Add the domains `www.srkhospitality.net` (primary) and `srkhospitality.net`. The apex domain 308-redirects to www, and HTTP is upgraded to HTTPS automatically.
+3. **Environment variables** (Project → Settings → Environment Variables). They are never exposed to the browser:
+   - `RESEND_API_KEY`: from resend.com (verify the domain there first)
+   - `CONTACT_TO_EMAIL`: e.g. `sanchita@srkhospitality.net`
+   - `CONTACT_FROM_EMAIL`: e.g. `The Hospitality Doctor <hello@srkhospitality.net>`
+   - `ALLOWED_ORIGINS` (optional): `https://www.srkhospitality.net,https://srkhospitality.net`
+4. **Analytics:** enable **Web Analytics** and **Speed Insights** in the Vercel dashboard. The scripts load only after a visitor clicks *Allow* in the consent banner.
+5. Submit `https://www.srkhospitality.net/sitemap.xml` in Google Search Console and Bing Webmaster Tools.
 
-## SEO / GEO
-- Title, description, canonical, hreflang, Open Graph and Twitter tags, and geo meta tags for Jaipur.
-- JSON-LD `@graph` covering ProfessionalService/LocalBusiness, Person, WebSite, WebPage (speakable), HowTo (the method), an OfferCatalog listing all 14 services, and FAQPage.
-- An answer-first summary block and an FAQ, written so AI answer engines can quote them directly.
-- `llms.txt` holds a plain-text fact sheet for LLM crawlers. `robots.txt` explicitly allows GPTBot, ClaudeBot, PerplexityBot, Google-Extended and others.
-- Semantic HTML, a single H1, alt text, lazy-loaded WebP images and a preloaded hero image. Animations respect `prefers-reduced-motion`.
-- `vercel.json` sets security headers (CSP, HSTS and others) and long-lived caching for `/assets`.
+Until the email variables are set, the form returns a friendly error that points visitors to WhatsApp and email.
 
-## Editing
-- Copy: `index.html`. Also update the matching JSON-LD and `llms.txt` so they stay in sync.
-- Styles: `assets/css/styles.css`. Motion and the diagnostic quiz: `assets/js/main.js`.
-- Leads go to WhatsApp (+91 99204 59695) and email. There is no backend.
+## Spam protection
+The booking form uses a hidden honeypot field, a minimum fill time of 3 seconds, a same-origin check, best-effort rate limiting per IP (5 per 10 minutes) and server-side validation. For stronger protection, add Cloudflare Turnstile or Vercel Firewall rate limiting.
+
+## Brand tokens
+Brand Black `#141414` · Brand Gold `#D5A855` · Gold Highlight `#ECC369` · Deep Gold `#7D5F2A` (gold used as text on light surfaces, for AA contrast). Light and dark mode follow the visitor's system setting.

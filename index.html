@@ -10,7 +10,10 @@
 <link rel="canonical" href="https://www.srkhospitality.net/">
 <link rel="alternate" hreflang="en-IN" href="https://www.srkhospitality.net/">
 <link rel="alternate" hreflang="x-default" href="https://www.srkhospitality.net/">
-<meta name="theme-color" content="#0b0a08">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FBF9F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0C0C" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
 <meta name="geo.region" content="IN-RJ">
 <meta name="geo.placename" content="Jaipur">
 <meta name="geo.position" content="26.9124;75.7873">
@@ -31,14 +34,12 @@
 <meta name="twitter:description" content="We diagnose what's not working in your hotel, fix what matters, and stay until you see the difference.">
 <meta name="twitter:image" content="https://www.srkhospitality.net/assets/img/og-image.jpg">
 
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="/assets/img/sanchita-ralhan-portrait.webp" fetchpriority="high">
+<link rel="preload" as="image" href="/assets/img/sanchita-ralhan-portrait-800.webp" imagesrcset="/assets/img/sanchita-ralhan-portrait-480.webp 480w, /assets/img/sanchita-ralhan-portrait-640.webp 640w, /assets/img/sanchita-ralhan-portrait-800.webp 800w" imagesizes="(max-width: 960px) 92vw, 460px" fetchpriority="high">
 <link rel="stylesheet" href="/assets/css/styles.css">
 
 <script type="application/ld+json">
@@ -53,7 +54,7 @@
       "slogan": "Diagnosing Hospitality. Prescribing Excellence.",
       "description": "Hotel consulting and hospitality training firm that diagnoses and fixes hotel performance across people, process and profit through audits, SOPs, on-floor training, upselling and revenue management coaching.",
       "url": "https://www.srkhospitality.net/",
-      "logo": "https://www.srkhospitality.net/assets/img/logo-srk.webp",
+      "logo": "https://www.srkhospitality.net/assets/img/icon-512.png",
       "image": "https://www.srkhospitality.net/assets/img/og-image.jpg",
       "telephone": "+91-99204-59695",
       "email": "sanchita@srkhospitality.net",
@@ -103,7 +104,7 @@
       "alternateName": "Sanchita Kapoor Ralhan",
       "jobTitle": "Founder, The Hospitality Doctor",
       "description": "Hospitality trainer and hotel consultant with 15+ years in luxury hotel operations, training and quality assurance across Oberoi, Leela, Shangri-La, Conrad, Neemrana, Samode and Indian Accent.",
-      "image": "https://www.srkhospitality.net/assets/img/sanchita-ralhan-portrait.webp",
+      "image": "https://www.srkhospitality.net/assets/img/sanchita-ralhan-portrait-800.webp",
       "worksFor": {"@id": "https://www.srkhospitality.net/#business"},
       "homeLocation": {"@type": "Place", "name": "Jaipur, Rajasthan, India"},
       "knowsAbout": ["Hospitality training", "Hotel operations", "Quality assurance", "Upselling", "Guest experience", "Leadership development"],
@@ -156,347 +157,384 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="progress" aria-hidden="true"><span></span></div>
-<div class="cursor-glow" aria-hidden="true"></div>
 
 <header class="nav" id="top">
-  <a class="brand" href="/" aria-label="The Hospitality Doctor – home">
-    <img src="/assets/img/logo-srk.webp" alt="" width="34" height="64">
-    <span><b>The Hospitality</b> Doctor</span>
-  </a>
-  <nav aria-label="Primary">
-    <ul class="nav-links">
-      <li><a href="#method">Method</a></li>
-      <li><a href="#solutions">Solutions</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#founder">Founder</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
-  </nav>
-  <a class="btn btn-gold btn-sm magnetic" href="#diagnose">Free diagnosis</a>
-  <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button>
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="The Hospitality Doctor, home">
+      <img src="/assets/img/logo-mark.webp" alt="" width="64" height="120">
+      <span>The Hospitality Doctor</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#solutions">Solutions</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#founder">Founder</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm nav-cta" href="#book">Book a diagnosis</a>
+    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu-sheet">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
 </header>
-<div class="mobile-menu" id="mobile-menu" hidden>
-  <a href="#method">Method</a><a href="#solutions">Solutions</a><a href="#results">Results</a><a href="#founder">Founder</a><a href="#faq">FAQ</a><a href="#diagnose" class="btn btn-gold">Free diagnosis</a>
+
+<div class="sheet-backdrop" id="menu-sheet" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+    <span class="grabber" aria-hidden="true"></span>
+    <nav class="list" aria-label="Mobile">
+      <a href="#solutions">Solutions</a>
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#founder">Founder</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-block" href="#book">Book a 48-hour diagnosis</a>
+  </div>
 </div>
 
 <main id="main">
 
 <!-- HERO -->
 <section class="hero" aria-labelledby="hero-title">
-  <canvas class="particles" aria-hidden="true"></canvas>
-  <div class="hero-grid wrap">
+  <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="eyebrow reveal"><span class="pulse-dot"></span>Hotel consulting &amp; hospitality training · India</p>
-      <h1 id="hero-title" class="reveal split">We don't sell training.<br><em>We build hotel performance.</em></h1>
-      <p class="lead reveal">We diagnose what's not working in your hotel, fix what matters and stay until you see the difference. People. Process. Profit.</p>
-      <div class="hero-cta reveal">
-        <a class="btn btn-gold magnetic" href="#diagnose">Give us 48 hours <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn-ghost" href="#solutions">See the 14 solutions</a>
+      <p class="eyebrow reveal">Hotel consulting &amp; hospitality training · India</p>
+      <h1 id="hero-title" class="large-title reveal">We don't sell training. <span class="accent">We build hotel performance.</span></h1>
+      <p class="hero-sub reveal">We diagnose what isn't working in your hotel, fix what matters, and stay until you see the difference.</p>
+      <div class="actions reveal">
+        <a class="btn btn-primary btn-lg" href="#book">Book a 48-hour diagnosis</a>
+        <a class="btn btn-plain" href="#method">How it works <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></a>
       </div>
-      <ul class="hero-stats reveal" aria-label="Key facts">
-        <li><b data-count="15" data-suffix="+">15+</b><span>years in luxury hotels</span></li>
-        <li><b data-count="14">14</b><span>hotel solutions</span></li>
-        <li><b data-count="30">30</b><span>days of follow-through</span></li>
-      </ul>
     </div>
+    <figure class="hero-media reveal">
+      <picture>
+        <img src="/assets/img/sanchita-ralhan-portrait-800.webp" srcset="/assets/img/sanchita-ralhan-portrait-480.webp 480w, /assets/img/sanchita-ralhan-portrait-640.webp 640w, /assets/img/sanchita-ralhan-portrait-800.webp 800w" sizes="(max-width: 960px) 92vw, 460px" alt="Portrait of Sanchita Ralhan, founder of The Hospitality Doctor" width="800" height="1000" fetchpriority="high">
+      </picture>
+      <figcaption class="glass-chip">
+        <span class="chip-dot" aria-hidden="true"></span>
+        <span><b>Sanchita Ralhan</b>Founder · 15+ years in luxury hotels</span>
+      </figcaption>
+    </figure>
+  </div>
 
-    <div class="hero-visual" aria-hidden="true">
-      <div class="orbit o1"></div><div class="orbit o2"></div><div class="orbit o3"><i></i></div>
-      <div class="arch">
-        <img src="/assets/img/sanchita-ralhan-portrait.webp" alt="" width="634" height="1350" fetchpriority="high">
-      </div>
-      <svg class="ecg" viewBox="0 0 600 120" preserveAspectRatio="none"><path d="M0 60 H170 L190 60 L205 20 L222 104 L240 8 L258 84 L272 60 H600"/></svg>
-      <div class="vital v1 float"><small>Guest delight</small><b>+7%</b><svg viewBox="0 0 60 20"><path d="M0 16 L12 12 L24 14 L36 6 L48 8 L60 2"/></svg></div>
-      <div class="vital v2 float"><small>Food cost</small><b>36% → 28%</b></div>
-      <div class="vital v3 float"><small>Diagnosis</small><b>Prescribed ✓</b></div>
+  <div class="wrap">
+    <ul class="stat-group reveal" aria-label="Key facts">
+      <li><b data-count="15" data-suffix="+">15+</b><span>Years with Oberoi, Leela, Shangri-La &amp; Conrad</span></li>
+      <li><b data-count="14">14</b><span>Solutions across people, process &amp; profit</span></li>
+      <li><b data-count="30">30</b><span>Days of follow-through on every module</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ANSWER (GEO) -->
+<section id="answer" class="section-tight" aria-label="About The Hospitality Doctor">
+  <div class="wrap">
+    <div class="card answer reveal">
+      <p><strong>The Hospitality Doctor</strong> (SRK Hospitality Solutions) is a Jaipur-based hotel consulting and training practice founded by <strong>Sanchita Ralhan</strong>. We audit a hotel's people, processes and profit, fix the gaps on the floor with workshops, SOPs and revenue programmes, and stay for 30 days until the change holds.</p>
     </div>
   </div>
-  <a class="scroll-cue" href="#answer" aria-label="Scroll to learn more"><span></span></a>
-</section>
-
-<!-- ANSWER BLOCK (GEO) -->
-<section id="answer" class="answer wrap reveal" aria-label="The Hospitality Doctor at a glance">
-  <p><strong>The Hospitality Doctor</strong> (SRK Hospitality Solutions) is a Jaipur-based hotel consulting and training firm founded by <strong>Sanchita Ralhan</strong>. It audits a hotel's people, processes and profit levers, then fixes the gaps on the floor with workshops, SOPs, upselling and revenue programmes, with <strong>30 days of follow-through</strong> on every module.</p>
-</section>
-
-<!-- BRANDS MARQUEE -->
-<section class="marquee" aria-label="Brands in Sanchita Ralhan's career">
-  <p class="marquee-label">A career shaped at</p>
-  <div class="marquee-track">
-    <ul>
-      <li>The Oberoi Group</li><li>The Leela</li><li>Shangri-La</li><li>Conrad Maldives</li><li>Neemrana</li><li>Samode</li><li>Suryagarh</li><li>Indian Accent</li>
-    </ul>
-    <ul aria-hidden="true">
-      <li>The Oberoi Group</li><li>The Leela</li><li>Shangri-La</li><li>Conrad Maldives</li><li>Neemrana</li><li>Samode</li><li>Suryagarh</li><li>Indian Accent</li>
-    </ul>
+  <div class="marquee" aria-label="Brands in the founder's career">
+    <div class="marquee-track">
+      <ul><li>The Oberoi Group</li><li>The Leela</li><li>Shangri-La</li><li>Conrad Maldives</li><li>Neemrana</li><li>Samode</li><li>Suryagarh</li><li>Indian Accent</li></ul>
+      <ul aria-hidden="true"><li>The Oberoi Group</li><li>The Leela</li><li>Shangri-La</li><li>Conrad Maldives</li><li>Neemrana</li><li>Samode</li><li>Suryagarh</li><li>Indian Accent</li></ul>
+    </div>
   </div>
 </section>
 
 <!-- SYMPTOMS -->
-<section class="section wrap" id="symptoms" aria-labelledby="sym-title">
-  <header class="sec-head">
-    <p class="eyebrow reveal">Symptoms</p>
-    <h2 id="sym-title" class="reveal">Tell us where it hurts.</h2>
-    <p class="reveal muted">Tap a symptom to see the prescription.</p>
-  </header>
-  <div class="symptoms">
-    <button class="flip reveal" type="button" aria-pressed="false">
-      <span class="face front"><i class="sym-ico">01</i><q>Things only work when I'm around.</q><small>Tap for prescription</small></span>
-      <span class="face back"><i>Rx</i><b>The Invisible Manager</b>Supervisor accountability so the hotel runs without you on the floor.</span>
-    </button>
-    <button class="flip reveal" type="button" aria-pressed="false">
-      <span class="face front"><i class="sym-ico">02</i><q>The same complaints keep repeating.</q><small>Tap for prescription</small></span>
-      <span class="face back"><i>Rx</i><b>The Operational Bible</b>SOPs, checklists and job descriptions your team actually follows.</span>
-    </button>
-    <button class="flip reveal" type="button" aria-pressed="false">
-      <span class="face front"><i class="sym-ico">03</i><q>OTAs decide our pricing.</q><small>Tap for prescription</small></span>
-      <span class="face back"><i>Rx</i><b>Revenue Management Excellence</b>Pricing, distribution and forecasting you control.</span>
-    </button>
-    <button class="flip reveal" type="button" aria-pressed="false">
-      <span class="face front"><i class="sym-ico">04</i><q>Training felt good, then nothing changed.</q><small>Tap for prescription</small></span>
-      <span class="face back"><i>Rx</i><b>30-Day Reinforcement</b>On-floor coaching after every workshop, until it sticks.</span>
-    </button>
-  </div>
-</section>
-
-<!-- METHOD -->
-<section class="section method" id="method" aria-labelledby="method-title">
+<section class="section" id="symptoms" aria-labelledby="sym-title">
   <div class="wrap">
     <header class="sec-head">
-      <p class="eyebrow reveal">The SRK Method</p>
-      <h2 id="method-title" class="reveal">Diagnose. Fix. Measure.</h2>
-      <p class="reveal muted">No generic training calendar. The hotel decides the prescription.</p>
+      <p class="eyebrow reveal">Symptoms</p>
+      <h2 id="sym-title" class="title-1 reveal">Tell us where it hurts.</h2>
+      <p class="sec-sub reveal">The four problems we hear most often, and what we prescribe for each.</p>
     </header>
-    <div class="steps-wrap">
-    <svg class="steps-line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 H1000"/></svg>
-    <ol class="steps">
-      <li class="step reveal">
-        <div class="step-ico"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="12"/><path d="M30 30l10 10"/><path class="beat" d="M13 21h4l2-5 3 10 2-5h4"/></svg></div>
-        <h3><span>01</span> Diagnose</h3>
-        <p>48 hours on your property. Shifts, touchpoints, rooms, service, rates.</p>
-      </li>
-      <li class="step reveal">
-        <div class="step-ico"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="10" width="30" height="30" rx="4"/><path d="M24 17v16M16 25h16"/></svg></div>
-        <h3><span>02</span> Fix</h3>
-        <p>Hands-on workshops, on-floor coaching and SOPs built for your hotel.</p>
-      </li>
-      <li class="step reveal">
-        <div class="step-ico"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 38h32"/><path class="bars" d="M14 34V26M22 34V18M30 34V22M38 34V12"/></svg></div>
-        <h3><span>03</span> Measure</h3>
-        <p>30 days of reinforcement and dashboards so results show up in reviews and revenue.</p>
-      </li>
-    </ol>
-    </div>
-    <ul class="deliverables reveal" aria-label="Included in every module">
-      <li>Hands-on workshop</li><li>Practical playbook</li><li>SOP documentation</li><li>On-floor coaching</li><li>30-day reinforcement</li>
+    <ul class="grouped rx-list reveal">
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.2-3.6 4-5.5 7-5.5s5.8 1.9 7 5.5"/></svg></span><div><q>Things only work when I'm around.</q><p><b>The Invisible Manager</b> · supervisors who own the shift</p></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/></svg></span><div><q>The same complaints keep coming back.</q><p><b>The Operational Bible</b> · SOPs and checklists that stick</p></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18l5-5 4 3 7-8"/><path d="M15 8h5v5"/></svg></span><div><q>The OTAs decide our pricing.</q><p><b>Revenue Management Excellence</b> · pricing back in your control</p></div></li>
+      <li><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M8 3v4M16 3v4M4 10h16M9 15l2 2 4-4"/></svg></span><div><q>Training felt good, then nothing changed.</q><p><b>30-Day Reinforcement</b> · on-floor coaching until it sticks</p></div></li>
     </ul>
   </div>
 </section>
 
 <!-- SOLUTIONS -->
-<section class="section wrap" id="solutions" aria-labelledby="sol-title">
-  <header class="sec-head">
-    <p class="eyebrow reveal">14 Solutions</p>
-    <h2 id="sol-title" class="reveal">People. Process. Profit.</h2>
-    <p class="reveal muted">The way we think about every property: who runs it, what holds it together, and what it should be earning.</p>
-  </header>
+<section class="section surface" id="solutions" aria-labelledby="sol-title">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">14 solutions</p>
+      <h2 id="sol-title" class="title-1 reveal">People. Process. Profit.</h2>
+      <p class="sec-sub reveal">The people who run your hotel, the process that holds it together, and the profit it should be making.</p>
+    </header>
 
-  <div class="tabs reveal" role="tablist" aria-label="Solution pillars">
-    <button role="tab" id="tab-people" aria-controls="panel-people" aria-selected="true">People <small>6</small></button>
-    <button role="tab" id="tab-process" aria-controls="panel-process" aria-selected="false" tabindex="-1">Process <small>5</small></button>
-    <button role="tab" id="tab-profit" aria-controls="panel-profit" aria-selected="false" tabindex="-1">Profit <small>3</small></button>
-    <span class="tab-ink" aria-hidden="true"></span>
-  </div>
+    <div class="segmented reveal" role="tablist" aria-label="Solution areas">
+      <span class="seg-thumb" aria-hidden="true"></span>
+      <button role="tab" id="tab-people" aria-controls="panel-people" aria-selected="true">People</button>
+      <button role="tab" id="tab-process" aria-controls="panel-process" aria-selected="false" tabindex="-1">Process</button>
+      <button role="tab" id="tab-profit" aria-controls="panel-profit" aria-selected="false" tabindex="-1">Profit</button>
+    </div>
 
-  <div class="panel" id="panel-people" role="tabpanel" aria-labelledby="tab-people">
-    <article class="card tilt"><span class="num">01</span><h3>Revenue Mastery Bootcamp</h3><p>Upselling, cross-selling and guest spend.</p></article>
-    <article class="card tilt"><span class="num">02</span><h3>Guest Experience Excellence</h3><p>WOW moments and service recovery.</p></article>
-    <article class="card tilt"><span class="num">03</span><h3>The Invisible Manager</h3><p>Supervisor accountability and leadership.</p></article>
-    <article class="card tilt"><span class="num">04</span><h3>Leadership Development</h3><p>Communication and team building.</p></article>
-    <article class="card tilt"><span class="num">05</span><h3>Comfort Is A Cage</h3><p>Ownership, mindset and confidence.</p></article>
-    <article class="card tilt"><span class="num">06</span><h3>New Joiner Integration</h3><p>Lower attrition, faster integration.</p></article>
+    <div class="panel card" id="panel-people" role="tabpanel" aria-labelledby="tab-people">
+      <div class="panel-media"><img src="/assets/img/pillar-people.webp" srcset="/assets/img/pillar-people-400.webp 400w, /assets/img/pillar-people.webp 700w" sizes="(max-width: 860px) 92vw, 440px" alt="Hands shaping clay on a potter's wheel, representing team development" loading="lazy" width="700" height="875"></div>
+      <div class="panel-body">
+        <h3 class="title-2">Build the right mindset.</h3>
+        <p class="secondary">Six programmes that change how your team behaves on the floor.</p>
+        <ol class="grouped svc">
+          <li><b>Revenue Mastery Bootcamp</b><span>Upselling, cross-selling and guest spend</span></li>
+          <li><b>Guest Experience Excellence</b><span>WOW moments and service recovery</span></li>
+          <li><b>The Invisible Manager</b><span>Supervisor accountability and leadership</span></li>
+          <li><b>Leadership Development</b><span>Communication and team building</span></li>
+          <li><b>Comfort Is A Cage</b><span>Ownership, mindset and confidence</span></li>
+          <li><b>New Joiner Integration</b><span>Lower attrition, faster onboarding</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="panel card" id="panel-process" role="tabpanel" aria-labelledby="tab-process" hidden>
+      <div class="panel-media"><img src="/assets/img/pillar-process.webp" srcset="/assets/img/pillar-process-400.webp 400w, /assets/img/pillar-process.webp 700w" sizes="(max-width: 860px) 92vw, 440px" alt="Precision watch movement, representing hotel operating systems" loading="lazy" width="700" height="875"></div>
+      <div class="panel-body">
+        <h3 class="title-2">Build strong systems.</h3>
+        <p class="secondary">Five ways to make operations consistent, even on the busiest day.</p>
+        <ol class="grouped svc" start="7">
+          <li><b>The Operational Bible</b><span>SOPs, job descriptions and checklists</span></li>
+          <li><b>Peak Hour Perfection</b><span>Task allocation and service flow</span></li>
+          <li><b>Pre-Opening Support</b><span>Systems, training and readiness</span></li>
+          <li><b>Weddings &amp; MICE Excellence</b><span>Banquet and event service</span></li>
+          <li><b>Airport Lounge Experience</b><span>High-volume service excellence</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="panel card" id="panel-profit" role="tabpanel" aria-labelledby="tab-profit" hidden>
+      <div class="panel-media"><img src="/assets/img/pillar-profit.webp" srcset="/assets/img/pillar-profit-400.webp 400w, /assets/img/pillar-profit.webp 700w" sizes="(max-width: 860px) 92vw, 440px" alt="Hand moving a chess piece, representing revenue strategy" loading="lazy" width="700" height="875"></div>
+      <div class="panel-body">
+        <h3 class="title-2">Improve performance.</h3>
+        <p class="secondary">Three services that turn enquiries, rooms and guests into their full value.</p>
+        <ol class="grouped svc" start="12">
+          <li><b>Revenue Management Excellence</b><span>Pricing, distribution and forecasting</span></li>
+          <li><b>MIS &amp; Dashboards</b><span>Reporting and performance tracking</span></li>
+          <li><b>Hotel Leasing &amp; Management</b><span>End-to-end operational oversight</span></li>
+        </ol>
+      </div>
+    </div>
   </div>
-  <div class="panel" id="panel-process" role="tabpanel" aria-labelledby="tab-process" hidden>
-    <article class="card tilt card-img"><img src="/assets/img/process-gears.webp" alt="Watch mechanism representing hotel operating systems" loading="lazy" width="700" height="660"><span class="num">07</span><h3>The Operational Bible</h3><p>SOPs, job descriptions and checklists.</p></article>
-    <article class="card tilt"><span class="num">08</span><h3>Peak Hour Perfection</h3><p>Task allocation and service flow.</p></article>
-    <article class="card tilt"><span class="num">09</span><h3>Pre-Opening Support</h3><p>Systems, training and readiness.</p></article>
-    <article class="card tilt"><span class="num">10</span><h3>Weddings &amp; MICE Excellence</h3><p>Banquet and event service.</p></article>
-    <article class="card tilt"><span class="num">11</span><h3>Airport Lounge Experience</h3><p>High-volume service excellence.</p></article>
-  </div>
-  <div class="panel" id="panel-profit" role="tabpanel" aria-labelledby="tab-profit" hidden>
-    <article class="card tilt card-chart"><svg class="mini-chart" viewBox="0 0 120 60" aria-hidden="true"><path d="M4 52 L28 40 L50 44 L72 26 L94 30 L116 8"/></svg><span class="num">12</span><h3>Revenue Management Excellence</h3><p>Pricing, distribution and forecasting.</p></article>
-    <article class="card tilt card-img"><img src="/assets/img/audit-blueprint.webp" alt="Magnifying glass over a report representing hotel MIS" loading="lazy" width="540" height="770"><span class="num">13</span><h3>MIS &amp; Dashboards</h3><p>Reporting and performance tracking.</p></article>
-    <article class="card tilt"><span class="num">14</span><h3>Hotel Leasing &amp; Management</h3><p>End-to-end operational oversight.</p></article>
+</section>
+
+<!-- METHOD -->
+<section class="section" id="method" aria-labelledby="method-title">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">The SRK Method</p>
+      <h2 id="method-title" class="title-1 reveal">Diagnose. Fix. Measure.</h2>
+      <p class="sec-sub reveal">There's no generic training calendar. Your hotel decides the prescription.</p>
+    </header>
+    <ol class="steps">
+      <li class="card step reveal">
+        <span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/><path d="M7 10.5h1.6l1-2 1.6 4 1-2H14"/></svg></span>
+        <span class="step-n">Step 1</span>
+        <h3 class="title-2">Diagnose</h3>
+        <p class="secondary">48 hours on your property: shifts, guest touchpoints, rooms, F&amp;B service and rates.</p>
+      </li>
+      <li class="card step reveal">
+        <span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/></svg></span>
+        <span class="step-n">Step 2</span>
+        <h3 class="title-2">Fix</h3>
+        <p class="secondary">Hands-on workshops, on-floor coaching and SOPs written for your hotel.</p>
+      </li>
+      <li class="card step reveal">
+        <span class="step-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16"/><path d="M7 16v-4M12 16V8M17 16v-6"/></svg></span>
+        <span class="step-n">Step 3</span>
+        <h3 class="title-2">Measure</h3>
+        <p class="secondary">30 days of reinforcement and simple dashboards, so the change shows up in reviews and revenue.</p>
+      </li>
+    </ol>
+    <ul class="badges reveal" aria-label="Included in every module">
+      <li>Hands-on workshop</li><li>Practical playbook</li><li>SOP documentation</li><li>On-floor coaching</li><li>30-day reinforcement</li>
+    </ul>
   </div>
 </section>
 
 <!-- RESULTS -->
-<section class="section results" id="results" aria-labelledby="res-title">
+<section class="section surface results" id="results" aria-labelledby="res-title">
   <div class="wrap">
     <header class="sec-head">
       <p class="eyebrow reveal">Vital signs</p>
-      <h2 id="res-title" class="reveal">Results from the floor, not the classroom.</h2>
+      <h2 id="res-title" class="title-1 reveal">Results from the floor, not the classroom.</h2>
     </header>
-    <div class="vitals-grid">
-      <figure class="metric reveal">
-        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52" style="--p:.5"/></svg>
-        <b><span data-count="50">50</span>%</b>
-        <figcaption>GOP growth: 10% → 15% at an owner-run hotel</figcaption>
-      </figure>
-      <figure class="metric reveal">
-        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52" style="--p:.22"/></svg>
-        <b>−<span data-count="8">8</span>&nbsp;pts</b>
-        <figcaption>Food cost cut from 36% to 28%</figcaption>
-      </figure>
-      <figure class="metric reveal">
-        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52" style="--p:.15"/></svg>
-        <b>+<span data-count="15">15</span>%</b>
-        <figcaption>Incremental reservations revenue at Oberoi</figcaption>
-      </figure>
-      <figure class="metric reveal">
-        <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52"/><circle class="ring-fg" cx="60" cy="60" r="52" style="--p:.12"/></svg>
-        <b>−<span data-count="12">12</span>%</b>
-        <figcaption>Guest complaints at Shangri-La Mumbai</figcaption>
-      </figure>
-    </div>
-    <p class="award reveal"><span>★</span> Training manual named <em>"Best Practice of the Month"</em> across Shangri-La worldwide.</p>
+    <dl class="stats">
+      <div class="card stat reveal"><dt>Gross operating profit</dt><dd><b>10% → <span data-count="15">15</span>%</b></dd><dd class="ctx">Owner-operated hotel</dd></div>
+      <div class="card stat reveal"><dt>Food cost</dt><dd><b>36% → <span data-count="28">28</span>%</b></dd><dd class="ctx">Same hotel, same menu</dd></div>
+      <div class="card stat reveal"><dt>Incremental revenue</dt><dd><b>+<span data-count="15">15</span>%</b></dd><dd class="ctx">Oberoi reservations</dd></div>
+      <div class="card stat reveal"><dt>Guest complaints</dt><dd><b>−<span data-count="12">12</span>%</b></dd><dd class="ctx">Shangri-La, Mumbai</dd></div>
+    </dl>
+    <p class="footnote center reveal">Her training manual was named "Best Practice of the Month" across Shangri-La worldwide.</p>
   </div>
 </section>
 
 <!-- HOTELS -->
-<section class="section wrap" id="hotels" aria-labelledby="hotels-title">
-  <header class="sec-head">
-    <p class="eyebrow reveal">Different hotels. Different challenges.</p>
-    <h2 id="hotels-title" class="reveal">Same doctor.</h2>
-  </header>
-  <ul class="hotels">
-    <li class="hotel reveal"><img src="/assets/img/hotel-samode.webp" alt="Samode heritage hotel, Rajasthan" loading="lazy" width="208" height="218"><h3>Samode</h3><p>Heritage storytelling</p></li>
-    <li class="hotel reveal"><img src="/assets/img/hotel-arya-niwas.webp" alt="Arya Niwas hotel, Jaipur" loading="lazy" width="222" height="218"><h3>Arya Niwas</h3><p>Operational excellence</p></li>
-    <li class="hotel reveal"><img src="/assets/img/hotel-city-palace-bikaner.webp" alt="City Palace Bikaner" loading="lazy" width="252" height="218"><h3>City Palace Bikaner</h3><p>Operations audit &amp; execution</p></li>
-    <li class="hotel reveal"><img src="/assets/img/hotel-blackrock-portfolio.webp" alt="Blackrock hotel portfolio" loading="lazy" width="272" height="218"><h3>Blackrock Portfolio</h3><p>Reservations &amp; wedding hotels</p></li>
-    <li class="hotel reveal"><img src="/assets/img/hotel-cinnamon-hotels.webp" alt="Cinnamon Hotels resort" loading="lazy" width="322" height="218"><h3>Cinnamon Hotels</h3><p>Upselling &amp; revenue</p></li>
-    <li class="hotel reveal"><img src="/assets/img/hotel-sangam-farms.webp" alt="Sangam Farms resort" loading="lazy" width="248" height="218"><h3>Sangam Farms</h3><p>Pre-opening foundation</p></li>
-  </ul>
+<section class="section" id="hotels" aria-labelledby="hotels-title">
+  <div class="wrap">
+    <header class="sec-head">
+      <p class="eyebrow reveal">Different hotels. Different challenges.</p>
+      <h2 id="hotels-title" class="title-1 reveal">Same doctor.</h2>
+    </header>
+    <ul class="grouped hotel-list reveal">
+      <li><b>Samode</b><span>Heritage storytelling</span></li>
+      <li><b>Arya Niwas</b><span>Operational excellence</span></li>
+      <li><b>City Palace Bikaner</b><span>Operations audit &amp; execution</span></li>
+      <li><b>Blackrock Portfolio</b><span>Reservations &amp; wedding hotels</span></li>
+      <li><b>Cinnamon Hotels</b><span>Upselling &amp; revenue</span></li>
+      <li><b>Sangam Farms</b><span>Pre-opening foundation</span></li>
+    </ul>
+  </div>
 </section>
 
 <!-- FOUNDER -->
-<section class="section founder" id="founder" aria-labelledby="founder-title">
-  <div class="wrap founder-grid">
-    <figure class="founder-photo reveal">
-      <img src="/assets/img/sanchita-ralhan-hotel-doctor.webp" alt="Sanchita Ralhan, founder of The Hospitality Doctor, seated in a heritage hotel lounge" loading="lazy" width="350" height="680">
-      <figcaption>Sanchita Ralhan · Founder</figcaption>
-    </figure>
-    <div>
-      <p class="eyebrow reveal">The hotel doctor on the floor</p>
-      <h2 id="founder-title" class="reveal">Sanchita Ralhan</h2>
-      <p class="lead reveal">"I'm not your typical hospitality trainer. I've run hotels, led operations, handled complaints and turned teams around."</p>
-      <p class="reveal muted">Rooted in discipline, led by empathy, driven by guest obsession.</p>
-      <ol class="timeline">
-        <li class="reveal"><time datetime="2007">2007</time><p><b>The Leela</b>Management Trainee, Mumbai</p></li>
-        <li class="reveal"><time datetime="2008">2008</time><p><b>The Oberoi Group</b>Reservations Supervisor, New Delhi</p></li>
-        <li class="reveal"><time datetime="2011">2011</time><p><b>Shangri-La</b>Rooms Trainer, Malé · Asst. Training Manager, Mumbai</p></li>
-        <li class="reveal"><time datetime="2018">2018</time><p><b>Hotel owner-operator</b>Ran a 70-person hotel in Visakhapatnam</p></li>
-        <li class="reveal"><time datetime="2021">2021</time><p><b>Training &amp; QA lead</b>Indian Accent, Samode and multi-brand reservations</p></li>
-        <li class="reveal"><time datetime="2024">2024</time><p><b>The Hospitality Doctor</b>Independent consulting from Jaipur</p></li>
-      </ol>
+<section class="section surface" id="founder" aria-labelledby="founder-title">
+  <div class="wrap">
+    <div class="card founder reveal">
+      <div class="founder-media"><img src="/assets/img/sanchita-ralhan-founder.webp" alt="Sanchita Ralhan seated in a heritage hotel lounge" loading="lazy" width="328" height="514"></div>
+      <div class="founder-body">
+        <p class="eyebrow">The founder</p>
+        <h2 id="founder-title" class="title-1">Sanchita Ralhan</h2>
+        <blockquote>"I'm not your typical hospitality trainer. I've run hotels, led operations, handled complaints and turned teams around."</blockquote>
+        <ol class="grouped timeline">
+          <li><time datetime="2007">2007</time><b>The Leela</b><span>Management Trainee, Mumbai</span></li>
+          <li><time datetime="2008">2008</time><b>The Oberoi Group</b><span>Reservations Supervisor, New Delhi</span></li>
+          <li><time datetime="2011">2011</time><b>Shangri-La</b><span>Rooms Trainer, Malé · Asst. Training Manager, Mumbai</span></li>
+          <li><time datetime="2018">2018</time><b>Hotel owner-operator</b><span>Ran a 70-person hotel in Visakhapatnam</span></li>
+          <li><time datetime="2021">2021</time><b>Training &amp; QA lead</b><span>Indian Accent, Samode, multi-brand reservations</span></li>
+          <li><time datetime="2024">2024</time><b>The Hospitality Doctor</b><span>Independent consulting from Jaipur</span></li>
+        </ol>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- DIAGNOSTIC -->
-<section class="section wrap" id="diagnose" aria-labelledby="dx-title">
-  <div class="dx">
+<!-- QUICK CHECK -->
+<section class="section" id="check" aria-labelledby="dx-title">
+  <div class="wrap dx">
     <header class="sec-head left">
       <p class="eyebrow reveal">60-second check-up</p>
-      <h2 id="dx-title" class="reveal">Run a quick hotel diagnosis.</h2>
-      <p class="reveal muted">Four honest answers. We'll suggest where to start.</p>
+      <h2 id="dx-title" class="title-1 reveal">Not sure where to start?</h2>
+      <p class="sec-sub reveal">Answer four quick questions and we'll suggest a starting point. Your answers carry over to the booking form.</p>
     </header>
-    <form class="dx-card reveal" id="dx-form" novalidate>
-      <div class="dx-progress" aria-hidden="true"><span></span></div>
-      <fieldset class="dx-q" data-step="0">
+    <form class="card dx-card reveal" id="dx-form" novalidate>
+      <div class="dx-top"><span class="dx-count">1 of 4</span><span class="meter" aria-hidden="true"><span></span></span></div>
+      <fieldset class="dx-q">
         <legend>How does your shift usually start?</legend>
-        <label><input type="radio" name="q0" value="process:0"> Calm, planned, checklist ready</label>
-        <label><input type="radio" name="q0" value="process:1"> Slightly rushed but manageable</label>
-        <label><input type="radio" name="q0" value="people:2"> Already dealing with a guest issue</label>
-        <label><input type="radio" name="q0" value="process:3"> Firefighting from the first hour</label>
+        <label class="opt"><input type="radio" name="q0" value="process:0"><span>Calm, planned, checklist ready</span></label>
+        <label class="opt"><input type="radio" name="q0" value="process:1"><span>Slightly rushed but manageable</span></label>
+        <label class="opt"><input type="radio" name="q0" value="people:2"><span>Already dealing with a guest issue</span></label>
+        <label class="opt"><input type="radio" name="q0" value="process:3"><span>Firefighting from the first hour</span></label>
       </fieldset>
-      <fieldset class="dx-q" data-step="1" hidden>
+      <fieldset class="dx-q" hidden>
         <legend>If you took two days off…</legend>
-        <label><input type="radio" name="q1" value="people:0"> Operations would run smoothly</label>
-        <label><input type="radio" name="q1" value="people:1"> Minor issues would come up</label>
-        <label><input type="radio" name="q1" value="people:2"> Things would slow down</label>
-        <label><input type="radio" name="q1" value="people:3"> I don't feel comfortable doing that</label>
+        <label class="opt"><input type="radio" name="q1" value="people:0"><span>Operations would run smoothly</span></label>
+        <label class="opt"><input type="radio" name="q1" value="people:1"><span>Minor issues would come up</span></label>
+        <label class="opt"><input type="radio" name="q1" value="people:2"><span>Things would slow down</span></label>
+        <label class="opt"><input type="radio" name="q1" value="people:3"><span>I wouldn't feel comfortable doing that</span></label>
       </fieldset>
-      <fieldset class="dx-q" data-step="2" hidden>
+      <fieldset class="dx-q" hidden>
         <legend>Upselling in your hotel happens…</legend>
-        <label><input type="radio" name="q2" value="profit:0"> Naturally and confidently</label>
-        <label><input type="radio" name="q2" value="profit:1"> Only by one or two staff</label>
-        <label><input type="radio" name="q2" value="profit:2"> Rarely</label>
-        <label><input type="radio" name="q2" value="profit:3"> Never</label>
+        <label class="opt"><input type="radio" name="q2" value="profit:0"><span>Naturally and confidently</span></label>
+        <label class="opt"><input type="radio" name="q2" value="profit:1"><span>Only with one or two staff</span></label>
+        <label class="opt"><input type="radio" name="q2" value="profit:2"><span>Rarely</span></label>
+        <label class="opt"><input type="radio" name="q2" value="profit:3"><span>Never</span></label>
       </fieldset>
-      <fieldset class="dx-q" data-step="3" hidden>
+      <fieldset class="dx-q" hidden>
         <legend>Your room rates are…</legend>
-        <label><input type="radio" name="q3" value="profit:0"> Planned and tracked</label>
-        <label><input type="radio" name="q3" value="profit:1"> Changed reactively</label>
-        <label><input type="radio" name="q3" value="profit:2"> Decided by OTAs</label>
-        <label><input type="radio" name="q3" value="profit:3"> Not sure what's optimal</label>
+        <label class="opt"><input type="radio" name="q3" value="profit:0"><span>Planned and tracked</span></label>
+        <label class="opt"><input type="radio" name="q3" value="profit:1"><span>Changed reactively</span></label>
+        <label class="opt"><input type="radio" name="q3" value="profit:2"><span>Decided by the OTAs</span></label>
+        <label class="opt"><input type="radio" name="q3" value="profit:3"><span>I'm not sure what's optimal</span></label>
       </fieldset>
       <div class="dx-result" hidden aria-live="polite">
-        <p class="eyebrow">Your prescription</p>
-        <h3 class="dx-title"></h3>
-        <ul class="dx-meds"></ul>
-        <div class="dx-actions">
-          <a class="btn btn-gold magnetic dx-wa" href="https://wa.me/919920459695" target="_blank" rel="noopener">Book the 48-hour visit on WhatsApp</a>
-          <button type="button" class="btn btn-ghost dx-reset">Start again</button>
+        <p class="eyebrow">Suggested starting point</p>
+        <h3 class="title-2 dx-title"></h3>
+        <ol class="grouped dx-meds"></ol>
+        <div class="actions">
+          <a class="btn btn-primary" href="#book">Continue to booking</a>
+          <button type="button" class="btn btn-plain dx-reset">Start over</button>
         </div>
       </div>
-      <div class="dx-nav">
-        <button type="button" class="btn btn-ghost btn-sm dx-back" disabled>Back</button>
-        <span class="dx-count">1 / 4</span>
+      <div class="dx-nav"><button type="button" class="btn btn-plain dx-back" disabled><svg class="chev back" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg> Back</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- BOOK (single primary CTA destination) -->
+<section class="section surface" id="book" aria-labelledby="book-title">
+  <div class="wrap book">
+    <header class="sec-head left">
+      <p class="eyebrow reveal">Book a diagnosis</p>
+      <h2 id="book-title" class="title-1 reveal">Tell us where it hurts. We'll prescribe the fix.</h2>
+      <p class="sec-sub reveal">We reply within one working day to arrange your 48-hour on-property diagnosis.</p>
+      <ul class="grouped contact-list reveal">
+        <li><a href="https://wa.me/919920459695" target="_blank" rel="noopener"><b>WhatsApp</b><span>+91 99204 59695</span></a></li>
+        <li><a href="tel:+919920459695"><b>Sanchita Ralhan, Founder</b><span>+91 99204 59695</span></a></li>
+        <li><a href="tel:+919654961046"><b>Rahul Khanna, Partner</b><span>+91 96549 61046</span></a></li>
+        <li><a href="mailto:sanchita@srkhospitality.net"><b>Email</b><span>sanchita@srkhospitality.net</span></a></li>
+      </ul>
+    </header>
+
+    <form class="card form reveal" id="book-form" action="/api/contact" method="post" novalidate>
+      <div class="field">
+        <input id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" placeholder=" ">
+        <label for="f-name">Your name</label>
+        <p class="err" id="e-name" aria-live="polite"></p>
       </div>
+      <div class="field">
+        <input id="f-hotel" name="hotel" type="text" autocomplete="organization" required minlength="2" maxlength="120" placeholder=" ">
+        <label for="f-hotel">Hotel or property</label>
+        <p class="err" id="e-hotel" aria-live="polite"></p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="120" placeholder=" " inputmode="email">
+          <label for="f-email">Email</label>
+          <p class="err" id="e-email" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="20" placeholder=" " inputmode="tel" pattern="[+0-9 ()-]{7,20}">
+          <label for="f-phone">Phone (optional)</label>
+          <p class="err" id="e-phone" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="field">
+        <textarea id="f-message" name="message" rows="4" required minlength="10" maxlength="2000" placeholder=" "></textarea>
+        <label for="f-message">What's hurting most right now?</label>
+        <p class="err" id="e-message" aria-live="polite"></p>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="f-website">Leave this field empty</label>
+        <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <input type="hidden" name="t" id="f-t">
+      <label class="check">
+        <input type="checkbox" name="consent" id="f-consent" required>
+        <span>I agree to the <a href="/privacy">Privacy Policy</a> and to being contacted about my enquiry.</span>
+      </label>
+      <p class="err" id="e-consent" aria-live="polite"></p>
+      <button class="btn btn-primary btn-lg btn-block" type="submit"><span class="btn-label">Book my diagnosis</span><span class="spinner" aria-hidden="true"></span></button>
+      <div class="form-status" role="status" aria-live="polite" hidden></div>
     </form>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section wrap narrow" id="faq" aria-labelledby="faq-title">
-  <header class="sec-head">
-    <p class="eyebrow reveal">FAQ</p>
-    <h2 id="faq-title" class="reveal">Questions hoteliers ask.</h2>
-  </header>
-  <div class="faq">
-    <details class="reveal"><summary>What does The Hospitality Doctor do?</summary><p>We audit your hotel's people, processes and profit levers, then fix the gaps on the floor with workshops, SOPs, upselling and revenue programmes, followed by 30 days of reinforcement.</p></details>
-    <details class="reveal"><summary>Who is Sanchita Ralhan?</summary><p>The founder. She has 15+ years in luxury hospitality with The Leela, Oberoi, Shangri-La, Conrad, Indian Accent and Samode, has run her own hotel, and now consults for hotels across India from Jaipur.</p></details>
-    <details class="reveal"><summary>How is this different from regular hotel training?</summary><p>There's no generic calendar. Every engagement starts with a diagnosis, and every module ships with a hands-on workshop, a leave-behind playbook and 30 days of follow-through.</p></details>
-    <details class="reveal"><summary>What is the 48-hour diagnostic?</summary><p>We spend 48 hours inside your hotel observing shifts, guest touchpoints, housekeeping, F&amp;B service and pricing, then show you what we'd fix first.</p></details>
-    <details class="reveal"><summary>Which hotels do you work with?</summary><p>Independent, boutique, heritage and resort hotels, wedding venues and portfolios, including Samode, Arya Niwas, City Palace Bikaner, Blackrock, Cinnamon Hotels and Sangam Farms.</p></details>
-    <details class="reveal"><summary>Do you work outside Rajasthan?</summary><p>Yes. We're based in Jaipur and deliver on-property across India.</p></details>
-    <details class="reveal"><summary>Can you help with a new hotel opening?</summary><p>Yes. Pre-Opening Support covers SOPs, job descriptions, training plans, mock service runs and readiness checks before the first guest arrives.</p></details>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta" id="contact" aria-labelledby="cta-title">
-  <div class="cta-bg" aria-hidden="true"></div>
-  <div class="wrap cta-inner">
-    <p class="eyebrow reveal">Before your competitor calls first</p>
-    <h2 id="cta-title" class="reveal">Tell us where it hurts.<br><em>We'll prescribe the fix.</em></h2>
-    <div class="contacts reveal">
-      <address class="contact-card">
-        <b>Sanchita Ralhan</b><span>Founder</span>
-        <a href="tel:+919920459695">+91 99204 59695</a>
-        <a href="mailto:sanchita@srkhospitality.net">sanchita@srkhospitality.net</a>
-      </address>
-      <address class="contact-card">
-        <b>Rahul Khanna</b><span>Partner</span>
-        <a href="tel:+919654961046">+91 96549 61046</a>
-        <a href="https://www.instagram.com/the.hospitalitydoctor/" target="_blank" rel="noopener">@the.hospitalitydoctor</a>
-      </address>
-    </div>
-    <div class="hero-cta reveal center">
-      <a class="btn btn-gold magnetic" href="https://wa.me/919920459695?text=Hi%20Sanchita%2C%20I%27d%20like%20a%2048-hour%20diagnosis%20for%20my%20hotel." target="_blank" rel="noopener">WhatsApp us</a>
-      <a class="btn btn-ghost" href="mailto:sanchita@srkhospitality.net?subject=Hotel%20diagnosis%20enquiry">Email us</a>
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="wrap narrow">
+    <header class="sec-head">
+      <p class="eyebrow reveal">FAQ</p>
+      <h2 id="faq-title" class="title-1 reveal">Questions hoteliers ask.</h2>
+    </header>
+    <div class="grouped faq reveal">
+      <details><summary>What does The Hospitality Doctor do?</summary><p>We audit your hotel's people, processes and profit, then fix the gaps on the floor with workshops, SOPs, upselling and revenue programmes. Every module comes with 30 days of reinforcement.</p></details>
+      <details><summary>Who is Sanchita Ralhan?</summary><p>She's the founder. She has 15+ years in luxury hospitality with The Leela, Oberoi, Shangri-La, Conrad, Indian Accent and Samode, has run her own hotel, and now consults for hotels across India from Jaipur.</p></details>
+      <details><summary>How is this different from regular hotel training?</summary><p>There's no generic calendar. Every engagement starts with a diagnosis, and every module comes with a hands-on workshop, a playbook your team keeps, and 30 days of follow-through.</p></details>
+      <details><summary>What is the 48-hour diagnostic?</summary><p>We spend 48 hours inside your hotel watching shifts, guest touchpoints, housekeeping, F&amp;B service and pricing. Then we show you what we'd fix first.</p></details>
+      <details><summary>Which hotels do you work with?</summary><p>Independent, boutique, heritage and resort hotels, wedding venues and hotel portfolios. Recent work includes Samode, Arya Niwas, City Palace Bikaner, Blackrock, Cinnamon Hotels and Sangam Farms.</p></details>
+      <details><summary>Do you work outside Rajasthan?</summary><p>Yes. We're based in Jaipur and work on-property with hotels across India.</p></details>
+      <details><summary>Can you help with a new hotel opening?</summary><p>Yes. Pre-Opening Support covers SOPs, job descriptions, training plans, mock service runs and readiness checks before the first guest arrives.</p></details>
     </div>
   </div>
 </section>
@@ -504,16 +542,42 @@
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <div class="brand"><img src="/assets/img/logo-srk.webp" alt="SRK Hospitality Solutions logo" width="28" height="52" loading="lazy"><span><b>The Hospitality</b> Doctor</span></div>
-    <p>SRK Hospitality Solutions · Jaipur, Rajasthan, India<br>Diagnosing hospitality. Prescribing excellence.</p>
-    <p class="small">© <span id="yr">2026</span> The Hospitality Doctor. All rights reserved.</p>
+    <a class="brand" href="/" aria-label="The Hospitality Doctor, home"><img src="/assets/img/logo-mark.webp" alt="" width="64" height="120" loading="lazy"><span>The Hospitality Doctor</span></a>
+    <p class="footnote">SRK Hospitality Solutions · Jaipur, Rajasthan, India</p>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <button type="button" class="link-btn" data-cookie-settings>Cookie settings</button>
+      <a href="https://www.instagram.com/the.hospitalitydoctor/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/sanchita-kapoor-ralhan-037ab2107/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+    <p class="footnote">© <span id="yr">2026</span> The Hospitality Doctor. All rights reserved.</p>
   </div>
 </footer>
 
-<a class="wa-float magnetic" href="https://wa.me/919920459695" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4a3.8 3.8 0 0 0-1.2 2.8c0 1.7 1.2 3.3 1.4 3.5.2.2 2.4 3.6 5.8 5.1 2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.7-.3z"/></svg>
-</a>
+<div class="dock" aria-hidden="true">
+  <a class="btn btn-primary btn-block" href="#book" tabindex="-1">Book a 48-hour diagnosis</a>
+</div>
 
+<div class="consent" id="consent" role="dialog" aria-modal="false" aria-labelledby="consent-title" hidden>
+  <div class="consent-card">
+    <p id="consent-title" class="consent-title">Privacy-friendly analytics</p>
+    <p class="secondary">We'd like to measure visits and page speed with Vercel Analytics. It sets no advertising cookies and we never sell data. Read about it in our <a href="/privacy#cookies">privacy policy</a>.</p>
+    <div class="consent-actions">
+      <button type="button" class="btn btn-secondary" data-consent="denied">Decline</button>
+      <button type="button" class="btn btn-primary" data-consent="granted">Allow</button>
+    </div>
+  </div>
+</div>
+
+<template id="done-tpl">
+  <div class="done-state">
+    <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="M15 24.5l6 6 12-13"/></svg>
+    <h3 class="title-2">Thank you. We've got it.</h3>
+    <p class="secondary">We'll reply within one working day to plan your 48-hour diagnosis.</p>
+    <a class="btn btn-secondary" href="https://wa.me/919920459695" target="_blank" rel="noopener">Message us on WhatsApp</a>
+  </div>
+</template>
 <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

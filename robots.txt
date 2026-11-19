@@ -1,6 +1,7 @@
 # The Hospitality Doctor — crawl policy. Search and AI answer engines are welcome.
 User-agent: *
 Allow: /
+Disallow: /api/
 
 User-agent: GPTBot
 Allow: /

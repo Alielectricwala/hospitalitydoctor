@@ -6,6 +6,7 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)) + '/..')
 ASSETS = {
     '/assets/css/styles.css': 'assets/css/styles.css',
     '/assets/js/main.js': 'assets/js/main.js',
+    '/assets/js/motion.js': 'assets/js/motion.js',
     '/assets/img/og-image.jpg': 'assets/img/og-image.jpg',
     '/assets/img/apple-touch-icon.png': 'assets/img/apple-touch-icon.png',
     '/assets/img/icon-192.png': 'assets/img/icon-192.png',

@@ -161,7 +161,7 @@
     const status = $('.form-status', form);
     const rules = {
       name: v => v.trim().length >= 2 || 'Please enter your name.',
-      hotel: v => v.trim().length >= 2 || 'Please tell us your hotel or property.',
+      hotel: v => v.trim().length >= 2 || 'Please tell us your hotel, restaurant or café.',
       email: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || 'Please enter a valid email address.',
       phone: v => !v.trim() || /^[+0-9 ()-]{7,20}$/.test(v.trim()) || 'Please enter a valid phone number, or leave it blank.',
       message: v => v.trim().length >= 10 || 'Please add a few words (at least 10 characters).'

@@ -692,3 +692,11 @@ p a, .check a, .doc li a { text-decoration: underline; text-underline-offset: 3p
 .footer .btn-primary:hover { text-decoration: none; }
 .f-word span { font-size: 7.6vw; }
 @supports (font-size: 1cqi) { .f-word { container-type: inline-size; } .f-word span { font-size: 8.6cqi; } }
+
+/* restaurants & cafés */
+.rest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+.rest-card { padding: var(--s-6); display: grid; align-content: start; gap: var(--s-2); }
+.rest-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); margin-top: var(--s-5); padding: var(--s-4) var(--s-5); border-radius: var(--r-card); background: var(--accent-soft); }
+.rest-foot .secondary { font-size: 15px; color: var(--label); max-width: 60ch; }
+@media (max-width: 860px) { .rest-grid { grid-template-columns: 1fr; } .rest-foot { padding: var(--s-4); } }
+.founder-media img { object-position: 50% 30%; }

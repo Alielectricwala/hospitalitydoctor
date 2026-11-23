@@ -67,7 +67,7 @@ module.exports = async function handler(req, res) {
   };
   const errors = {};
   if (data.name.length < 2) errors.name = 'Please enter your name.';
-  if (data.hotel.length < 2) errors.hotel = 'Please tell us your hotel or property.';
+  if (data.hotel.length < 2) errors.hotel = 'Please tell us your hotel, restaurant or café.';
   if (!EMAIL_RE.test(data.email)) errors.email = 'Please enter a valid email address.';
   if (data.phone && !PHONE_RE.test(data.phone)) errors.phone = 'Please enter a valid phone number.';
   if (data.message.length < 10) errors.message = 'Please add a few more words.';
